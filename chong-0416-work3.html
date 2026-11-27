@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>校园尤克里里社 2026 年秋季招新</title>
+<style type="text/css">
+    /* 页面整体：背景渐变 + 用 text-align 与 inline-block 实现居中布局 */
+    body {
+        font-family: "Microsoft YaHei", Arial, sans-serif;
+        background: linear-gradient(135deg, #f7efe2, #fdfaf3);
+        color: #3b3025;
+        text-align: center;
+        font-size: 16px;
+    }
+
+    /* 主内容“卡片”区域：仅背景色按乐器主题调整，其余声明与要求完全一致 */
+    .page {
+        display: inline-block;
+        background-color: #fef8ec;
+        box-shadow: 0 0 30px rgba(80, 58, 35, 0.25);
+        text-align: left;
+        max-width: 720px;
+    }
+
+    /* 并集选择器：统一各级标题的颜色与字间距 */
+    h1, h2, h3, h4, h5, h6 {
+        color: #6b4423;
+        letter-spacing: 1px;
+    }
+
+    /* 类选择器：居中与右对齐 */
+    .center {
+        text-align: center;
+    }
+
+    .right {
+        text-align: right;
+    }
+
+    /* ID 选择器：只作用于 <p id="intro">，放大、加粗并换成醒目的砖红色 */
+    /* 说明：p#intro 只匹配 p 元素，不会影响同为 id="intro" 的 <h2> */
+    p#intro {
+        font-size: 140%;
+        font-weight: bold;
+        color: #b4472f;
+    }
+
+    /* 活动介绍普通段落：通过行高与字间距提升阅读舒适度 */
+    .intro-text {
+        line-height: 1.75;
+        letter-spacing: 0.5px;
+    }
+
+    /* 五个区域的左右留白（不修改 .page 本身） */
+    .sec {
+        padding: 0 28px;
+    }
+
+    /* 表格区域标题 */
+    .section-title {
+        text-align: center;
+    }
+
+    /* 表格基础样式：用背景色和行高区分层次 */
+    table {
+        width: 100%;
+        background-color: #fdf4e6;
+        font-size: 90%;
+        border-collapse: collapse;
+        border: 1px solid #e2cda9;
+    }
+
+    th {
+        background-color: #f2ddc0;
+        font-weight: bold;
+        text-align: center;
+        line-height: 2.2;
+    }
+
+    td {
+        line-height: 2.0;
+        text-align: center;
+    }
+
+    td, th {
+        border: 1px solid #e7d3b4;
+    }
+
+    /* 斑马纹行，让名单更易读 */
+    table tr:nth-child(even) {
+        background-color: #fbf0de;
+    }
+
+    /* 鼠标移入整行高亮 */
+    table tr:hover {
+        background-color: #eed8be;
+    }
+
+    /* 后代选择器：div 里的 table 里的 a，只突出表格内的姓名链接 */
+    div table a {
+        font-weight: bold;
+        font-size: 110%;
+        color: #8b3b30;
+    }
+
+    /* 链接伪类：未访问 / 已访问 / 悬停 / 按下 */
+    a:link {
+        color: #b6553b;
+        text-decoration: none;
+    }
+
+    a:visited {
+        color: #7a7b52;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: #e36a4c;
+        text-decoration: underline;
+    }
+
+    a:active {
+        color: #3046a1;
+        text-decoration: underline;
+    }
+
+    /* 带类名的链接：重点链接（红）与次要链接（蓝） */
+    a.red:link {
+        color: #e25b3d;
+        font-weight: bold;
+    }
+
+    a.red:active {
+        color: #3046a1;
+    }
+
+    a.blue:link {
+        color: #3f6fa8;
+        font-weight: bold;
+    }
+
+    a.blue:active {
+        color: #a53aa4;
+    }
+
+    /* 伪元素：段落首字放大并变色，做出杂志式排版 */
+    p::first-letter {
+        font-size: 180%;
+        color: #c45b3f;
+    }
+
+    /* 伪元素：div 的第一行加粗高亮，底部公告区的首行会格外醒目 */
+    div::first-line {
+        color: #b04832;
+        font-weight: bold;
+    }
+
+    /* 页面链接区：上下留白，让两条链接更醒目 */
+    .link-area {
+        padding: 6px 28px 16px;
+        line-height: 2.1;
+    }
+
+    /* 底部公告区：文字略小，行距放宽 */
+    .notice {
+        font-size: 90%;
+        line-height: 1.9;
+        background-color: #f7e8d1;
+        padding: 12px 28px 22px;
+    }
+
+    /* 分隔线：用渐变模拟细线，无 border */
+    .divider {
+        height: 1px;
+        background: linear-gradient(to right, rgba(107, 68, 35, 0), rgba(107, 68, 35, 0.55), rgba(107, 68, 35, 0));
+    }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+    <!-- ========== ① 顶部标题区：div 内含 h1 主标题 ========== -->
+    <div class="sec">
+        <h1 class="center">校园尤克里里社 · 2026 年秋季招新</h1>
+    </div>
+
+    <div class="divider"></div><br>
+
+    <!-- ========== ② 活动介绍区：h2 标题 + 两段以上正文 + p id="intro" 重要提示 ========== -->
+    <div class="sec">
+        <h2 id="intro" class="center">活动介绍：四根琴弦上的青春</h2>
+
+        <p class="intro-text">
+            尤克里里（Ukulele）是一种源自夏威夷的四弦拨弦乐器，琴身小巧、音色明亮温暖，被大家亲切地叫作“最快乐的小吉他”。校园尤克里里社成立于 2016 年，是学校文艺类社团里人气最高的一支，八年来始终坚持“零基础也能弹唱”的招新理念，陪伴三百多位同学从第一次按弦，一路走到登上校园舞台。
+        </p>
+
+        <p class="intro-text">
+            本次秋季招新面向全校所有年级，不限专业、不限基础。整个招新分为三步：先在社团文化节当天的摊位前现场咨询、试琴；再参加统一安排的面谈与试音；入社后由教学部安排三周新手带练，内容包括持琴姿势、调音方法、C 与 Am 等基础和弦以及常用扫弦节奏。哪怕五音不全、手指不灵活，每天练二十分钟，一个月后也能完整弹唱一首自己的歌。
+        </p>
+
+        <p class="intro-text">
+            入社后可以自由选择部门：教学部负责入门教材、公开课与日常带练；演出部负责节目编排与舞台统筹；宣传部负责海报、公众号推文与活动摄影；外联部负责与兄弟社团、兄弟院校的联谊交流。每周五晚 19:00—21:00 在学生活动中心音乐教室 201 的固定练琴时间，是社团最热闹的时候，新老社员围坐一圈，琴声、歌声和笑声一直不断。
+        </p>
+
+        <!-- 这个 p 使用 id="intro"，会被 p#intro 放大加粗并变红 -->
+        <p id="intro">
+            重要提示：本期招新限 30 人，报名截止时间为 12 月 6 日 24:00；面谈与试音安排在 12 月 12 日（周六）14:00—17:00，地点为学生活动中心音乐教室 201；社团备有练习用琴与拨片，无需自带乐器；请务必留下常用手机号与邮箱，审核结果将以短信通知，逾期未回复视为放弃名额。
+        </p>
+    </div>
+
+    <br><div class="divider"></div><br>
+
+    <!-- ========== ③ 活动报名信息表格区：h3 标题 + 表格（表头 + 五行数据） ========== -->
+    <div class="sec">
+        <h3 class="section-title">本期报名名单（截至 12 月 1 日，按提交时间排序）</h3>
+
+        <table>
+            <tr>
+                <th>编号</th>
+                <th>姓名</th>
+                <th>年级 · 专业</th>
+                <th>意向部门</th>
+                <th>报名状态</th>
+            </tr>
+            <tr>
+                <td>01</td>
+                <td><a href="chong-0416-work2.html#stories">王小雨</a></td>
+                <td>2025 级 计算机科学与技术</td>
+                <td>教学部</td>
+                <td>已确认席位</td>
+            </tr>
+            <tr>
+                <td>02</td>
+                <td>李梦瑶</td>
+                <td>2025 级 汉语言文学</td>
+                <td>演出部</td>
+                <td>已确认席位</td>
+            </tr>
+            <tr>
+                <td>03</td>
+                <td><a href="chong-0416-work2.html#show">林悦</a></td>
+                <td>2024 级 音乐学</td>
+                <td>演出部</td>
+                <td>已确认席位</td>
+            </tr>
+            <tr>
+                <td>04</td>
+                <td>陈一帆</td>
+                <td>2026 级 软件工程</td>
+                <td>宣传部</td>
+                <td>待确认</td>
+            </tr>
+            <tr>
+                <td>05</td>
+                <td>周子涵</td>
+                <td>2026 级 新闻传播学</td>
+                <td>外联部</td>
+                <td>候补名单</td>
+            </tr>
+        </table>
+    </div>
+
+    <br><div class="divider"></div><br>
+
+    <!-- ========== ④ 页面链接区：一个 div 内含两条链接（class="red" 与 class="blue"） ========== -->
+    <div class="center link-area">
+        <p>
+            <a class="red" href="chong-0416-work2.html">查看往期活动照片</a><br>
+            <a class="blue" href="chong-0416-work2.html#signup">在线咨询活动详情</a>
+        </p>
+    </div>
+
+    <br><div class="divider"></div><br>
+
+    <!-- ========== ⑤ 底部公告区：div class="notice" + 四段公告文本（含 br 换行） ========== -->
+    <div class="notice">
+        公告一：12 月 12 日（周六）14:00—17:00 在学生活动中心音乐教室 201 进行面谈与试音，请提前十分钟到场签到，并携带学生证。<br>
+        公告二：本期招新报名将于 12 月 6 日 24:00 截止，报名名单每周一更新一次，请以本页表格为准。<br>
+        公告三：社团备有练习用琴与拨片，面谈当天无需自带乐器；如需借用演出用琴，请提前一天向教学部登记。<br>
+        温馨提醒：音乐教室位于学生活动中心二楼东侧，练习结束后请带走个人物品、关闭电源与门窗。
+    </div>
+
+    <br>
+
+</div>
+
+</body>
+</html>
